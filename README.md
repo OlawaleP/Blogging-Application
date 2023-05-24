@@ -14,7 +14,7 @@ A simple blogging application developed using Node.js and Express. The applicati
 - Node.js
 - Express
 - MongoDB Atlas
-- Heroku
+- Firebase
 
 ## Prerequisites
 - Node.js and npm installed on your machine
