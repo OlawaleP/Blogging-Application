@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const cookieParser  = require('cookie-parser');
 
-//import  connectDB  from './config/database.config'
+const connectDB = require("./config/database.config");
 
 require('dotenv').config()
 
@@ -13,8 +13,8 @@ require('dotenv').config()
 //import authorRouter from './routes/authors';
 
 
-
-//connectDB();
+//Database connection
+connectDB();
 
 const app = express();
 
