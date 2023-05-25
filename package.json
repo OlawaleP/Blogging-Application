@@ -4,7 +4,8 @@
   "description": "A simple blogging application developed using Node.js and Express. The application allows authors to create blogs and users to comment on them.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,14 @@
   },
   "homepage": "https://github.com/OlawaleP/Blogging-Application#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongodb": "^5.5.0",
     "mongoose": "^7.2.0"
+  },
+  "devDependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "morgan": "^1.10.0"
   }
 }
