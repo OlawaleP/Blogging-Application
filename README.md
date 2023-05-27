@@ -21,39 +21,39 @@ A simple blogging application developed using Node.js and Express. The applicati
 
 
 ## Models
-The application consists of the following models with their attributes:
+- The application consists of the following models with their attributes:
 
 Author
+- First Name 
+- Last Name
+- Email
 
-First Name
-Last Name
-Email
 Blog
+- Title
+- Content
+- Author (reference to the Author model)
 
-Title
-Content
-Author (reference to the Author model)
 Comment
-
-Blog (reference to the Blog model)
-User Info
+- Blog (reference to the Blog model)
+- User Info
 
 
 ## API Endpoints
-The REST API provides the following endpoints:
+- The REST API provides the following endpoints:
 
-POST /signup: Create a new author/user
-POST /login: Sign in 
-GET /logout: logout user
-GET /user: user profile
-GET /post/all: Retrieve all blogs
-GET /post/:id: Retrieve a specific blog by ID
-POST /post/creste: Create a new blog
-PUT /post/update/:id: Update a specific blog by ID
-DELETE /post/delete/:id: Delete a specific blog by ID
-POST /post/comment/:id: Create a new comment
+- POST /signup: Create a new author/user
+- POST /login: Sign in 
+- GET /logout: logout user
+- GET /user: user profile
+- GET /post/all: Retrieve all blogs
+- GET /post/:id: Retrieve a specific blog by ID
+- POST /post/creste: Create a new blog
+- PUT /post/update/:id: Update a specific blog by ID
+- DELETE /post/delete/:id: Delete a specific blog by ID
+- POST /post/comment/:id: Create a new comment
 
 Optional Endpoints
-PUT /post/addlike/:id: Like a specific blog
-PUT /post/removelike/:id: Remove like
+- PUT /post/addlike/:id: Like a specific blog
+- PUT /post/removelike/:id: Remove like
 
+## RUN NPM INSTALL
