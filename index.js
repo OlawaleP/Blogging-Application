@@ -14,8 +14,8 @@ const connectDB = require("./config/database.config");
 const errorHandler = require('./middleware/error');
 
 //import routes
-const authorRoutes = require('./routes/authorRoutes');
 const authRoutes = require('./routes/authRoutes');
+const postRoutes = require('./routes/postRoutes'); 
 
 
 //import authorRouter from './routes/authors';
@@ -45,6 +45,7 @@ app.listen(port, () => {
 
 // Routes Middleware
 app.use('/', authRoutes);
+app.use('/', postRoutes);
 
 // Error Middleware
 app.use(errorHandler);

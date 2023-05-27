@@ -19,3 +19,11 @@ exports.isAuthenticate = async (req, res, next) => {
     return next(new ErrorResponse('You must Log In', 401))
   }
 }
+
+// Middleware for author
+exports.isAuthor = (req, res, next) => {
+  if (req.user.role === 'user') {
+    return next(new ErrorResponse('Access denied, you mus be an author', 401));
+  }
+  next();
+}
