@@ -1,37 +1,21 @@
-import jwt from "jsonwebtoken";
-import Author from "../model/author";
-const jwtsecret = process.env.JWT_SECRET;
+const ErrorResponse = require('../utils/errorResponse');
+const jwt = require('jsonwebtoken');
+const User = require('../models/userModel');
 
-export async function auth(req, res, next) {
+// check if user is authenticated
+exports.isAuthenticate = async (req, res, next) => {
+  const { token } = req.cookies;
+  // Make sure token exists
+  if (!token) {
+    return next(new ErrorResponse('You must Log In...', 401));
+  }
+
   try {
-    const authorization = req.cookies.token;
-    if (!authorization) {
-      return res.status(401).json({
-        error: "Kindly sign-in as an author",
-      });
-    }
-    let verified = jwt.verify(authorization, jwtsecret);
-    if (!verified) {
-      return res.status(401).json({
-        error: "Token invalid, you can't access this route",
-      });
-    }
-
-    const { id } = verified;
-
-    //find author by id;
-    const author = await Author.findOne({ id });
-
-    if (!author) {
-      return res.status(401).json({
-        error: "Kindly register/sign-in as an author",
-      });
-    }
-    req.author = verified;
+    // Verify token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = await User.findById(decoded.id);
     next();
   } catch (error) {
-    res.status(401).json({
-      error: "Author not logged in",
-    });
+    return next(new ErrorResponse('You must Log In', 401))
   }
 }
