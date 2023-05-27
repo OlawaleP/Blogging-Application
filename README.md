@@ -56,3 +56,4 @@ Optional Endpoints
 - PUT /post/addlike/:id: Like a specific blog
 - PUT /post/removelike/:id: Remove like
 
+## RUN NPM INSTALL
