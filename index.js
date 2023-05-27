@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 require("dotenv").config();
 var cors = require("cors");
 var cookieParser = require("cookie-parser");
+const router = express.Router();
 
 const connectDB = require("./config/database.config");
 
@@ -36,7 +37,8 @@ app.listen(port, () => {
 app.use("/", authRoutes);
 app.use("/post", postRoutes);
 
+app.use('/.netlify/functions/index', router)
+
 // Error Middleware
 app.use(errorHandler);
-
 
