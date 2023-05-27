@@ -52,7 +52,7 @@ POST /post/creste: Create a new blog
 PUT /post/update/:id: Update a specific blog by ID
 DELETE /post/delete/:id: Delete a specific blog by ID
 POST /post/comment/:id: Create a new comment
- Like a post/comment
+
 Optional Endpoints
 PUT /post/addlike/:id: Like a specific blog
 PUT /post/removelike/:id: Remove like
